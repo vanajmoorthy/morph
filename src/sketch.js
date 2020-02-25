@@ -1,18 +1,53 @@
 import Crystal from "./Crystal.js";
-import { favicon } from "./util.js";
+// import { functionDeclaration } from "babel-types";
+// import { favicon } from "./util.js";
+
+let canvasInstance;
+let needsDraw = true;
+
+var fade;
 
 window.setup = () => {
-	createCanvas(windowWidth, windowHeight);
-
-	noLoop();
+	canvasInstance = createCanvas(windowWidth, windowHeight);
+	// canvasInstance.doubleClicked()
 	angleMode(DEGREES);
 	rectMode(RADIUS);
+	fade = 255;
 };
 
 window.draw = () => {
+	if (!needsDraw) return;
+	drawOnce();
+	needsDraw = false;
+
+	fill(0, 0, 0, fade);
+	textSize(25);
+	textStyle(BOLD);
+	textAlign(CENTER);
+	background(255, 255, 255, fade);
+	text(
+		"Press space or double tap to refresh.",
+		windowWidth / 2 - 10,
+		windowHeight / 2 - 15
+	);
+};
+
+window.doubleClicked = () => {
+	needsDraw = true;
+	fade = 0;
+};
+
+window.keyPressed = () => {
+	if (keyCode === 32) {
+		needsDraw = true;
+		fade = 0;
+	}
+};
+
+window.drawOnce = () => {
+	background(255);
 	const CRYSTAL_SIZE_MAX = 250;
 	const GAP_MIN = 10;
-
 
 	const crystalSize = min(
 		CRYSTAL_SIZE_MAX,
@@ -30,13 +65,13 @@ window.draw = () => {
 			gapHor + crystalSize / 2 + (i % cols) * (crystalSize + gapHor);
 		const y =
 			gapVer + crystalSize / 2 + int(i / cols) * (crystalSize + gapVer);
-
 		new Crystal(x, y, crystalSize).render();
 	}
 
-	favicon(displayDensity(), crystalSize, gapHor, gapVer);
+	// favicon(displayDensity(), crystalSize, gapHor, gapVer);
 };
 
 window.windowResized = () => {
 	resizeCanvas(windowWidth, windowHeight);
+	needsDraw = true;
 };
