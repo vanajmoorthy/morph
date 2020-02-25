@@ -1,27 +1,25 @@
-import Layer from './Layer.js'
-import { polygon } from '../util.js'
+import Layer from "./Layer.js";
+import { polygon } from "../util.js";
 
 export default class Wave extends Layer {
-  
-  constructor() {
-    super(...arguments)
+	constructor() {
+		super(...arguments);
 
-    this.offset = this.radius * .15
-    this.stepLength = this.radius * .85 / this.numSteps
-  }
+		this.offset = this.radius * 0.15;
+		this.stepLength = (this.radius * 0.85) / this.numSteps;
+	}
 
-  render() {
-    noFill()
-    stroke(this.color)
-    strokeWeight(this.strokeWeight)
+	render() {
+		noFill();
+		stroke(this.color);
+		strokeWeight(this.strokeWeight);
 
-    push()
+		push();
 
-    for (let i = 1; i <= this.numSteps; i++) {
-      polygon(6, 0, 0, this.offset + (i * this.stepLength), 30)
-    }
+		for (let i = 1; i <= this.numSteps; i++) {
+			polygon(6, 0, 0, this.offset + i * this.stepLength, 30);
+		}
 
-    pop()
-  }
-
+		pop();
+	}
 }

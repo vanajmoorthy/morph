@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === "production") {
 export default {
 	input: "src/sketch.js",
 	output: {
-		file: "build/bundle.js",
+		file: "bundle.js",
 		format: "cjs"
 	},
 	plugins

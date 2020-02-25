@@ -10,7 +10,7 @@ export default class Layer {
 		this.numSteps = random([8, 10]);
 		this.stepLength = this.radius / this.numSteps;
 
-		this.palette = [color(255, 198, 71), color(0, 40, 94)];
+		this.palette = [color(29, 167, 234), color(58, 51, 53), color(233, 114, 76)];
 		this.color = random(this.palette);
 		this.strokeWeight = random([1, 2]);
 	}

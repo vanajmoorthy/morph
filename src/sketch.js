@@ -10,8 +10,9 @@ window.setup = () => {
 };
 
 window.draw = () => {
-	const CRYSTAL_SIZE_MAX = 150;
+	const CRYSTAL_SIZE_MAX = 250;
 	const GAP_MIN = 10;
+
 
 	const crystalSize = min(
 		CRYSTAL_SIZE_MAX,

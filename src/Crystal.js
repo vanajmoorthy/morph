@@ -1,4 +1,4 @@
-import layerConfig from "./conf/layerConfig.js";
+import layerConfig from "./config/layerConfig.js";
 
 export default class Crystal {
 	constructor(x, y, size) {
