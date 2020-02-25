@@ -21,12 +21,12 @@ window.draw = () => {
 	needsDraw = false;
 
 	fill(0, 0, 0, fade);
-	textSize(18);
+	textSize(25);
 	textStyle(BOLD);
 	textAlign(CENTER);
 	background(255, 255, 255, fade);
 	text(
-		"Press space or double tap to refresh.",
+		"Press space or \ndouble tap to refresh.",
 		windowWidth / 2,
 		windowHeight / 2
 	);
