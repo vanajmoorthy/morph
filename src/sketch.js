@@ -21,7 +21,7 @@ window.draw = () => {
 	needsDraw = false;
 
 	fill(0, 0, 0, fade);
-	textSize(25);
+	textSize(18);
 	textStyle(BOLD);
 	textAlign(CENTER);
 	background(255, 255, 255, fade);
