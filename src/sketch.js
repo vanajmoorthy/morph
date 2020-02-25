@@ -27,8 +27,8 @@ window.draw = () => {
 	background(255, 255, 255, fade);
 	text(
 		"Press space or double tap to refresh.",
-		windowWidth / 2 - 10,
-		windowHeight / 2 - 15
+		windowWidth / 2,
+		windowHeight / 2
 	);
 };
 
