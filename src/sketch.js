@@ -32,10 +32,18 @@ window.draw = () => {
 	);
 };
 
-window.doubleClicked = () => {
-	needsDraw = true;
-	fade = 0;
-};
+const card = document.querySelector('body');
+
+card.addEventListener('dblclick', function (e) {
+  needsDraw = true;
+  fade = 0
+  console.log("double clicked")
+});
+
+// window.doubleClicked = () => {
+// 	needsDraw = true;
+// 	fade = 0;
+// };
 
 window.keyPressed = () => {
 	if (keyCode === 32) {
